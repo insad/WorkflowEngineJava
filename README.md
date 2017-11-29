@@ -21,11 +21,13 @@ WorkflowEngineJava - component that adds workflow in your application. It can be
 
 
 <h2>Before start, you need to install the following items</h2>
-1. jdk7 or jdk8.
-2. maven3.
-3. set JAVA_HOME in PATH.
-4. set M2_HOME in PATH.
-
+<ul>
+	<li>1. jdk7 or jdk8.</li>
+	<li>2. maven3.</li>
+	<li>3. set JAVA_HOME in PATH.</li>
+	<li>4. set M2_HOME in PATH.</li>
+</ul>
+	
 <b>Example:</b>
 JAVA_HOME=/home/vagrant/jdk1.8.0_121
 M2_HOME=/home/vagrant/apache-maven-3.3.9
@@ -138,11 +140,11 @@ PATH=$PATH:$HOME/.local/bin:$HOME/bin:$JAVA_HOME/bin:$M2_HOME/bin
    9.6.  Configuration -> Datasources -> Non-XA -> Add
    9.7.  Choose Datasource -> MySQL Datasource -> Next
    9.8.  Step 1/3: Datasource Attributes: Name: MySqlDS, JNDI Name: java:jboss/datasources/MySqlDS -> Next
-   9.9.  Step 2/3: JDBC Driver: ¬ÍÎ‡‰Í‡ Detected Driver -> mysql-connector-java-5.1.40.jar_com.mysql.jdbc.Driver_5_1 -> Next
+   9.9.  Step 2/3: JDBC Driver: √Ç√™√´√†√§√™√† Detected Driver -> mysql-connector-java-5.1.40.jar_com.mysql.jdbc.Driver_5_1 -> Next
    9.10. Step 3/3: Connection Settings: Connection URL: jdbc:mysql://localhost:3306/workflow, Username: root -> Next
    9.11. Summary: Finish
    9.12. Execute the command: cd mysql/mysql-java-ee-sample
-   9.13. œOpen URL in your browser: http://localhost:8080/mysql-java-ee-sample-1.0-SNAPSHOT/
+   9.13. √èOpen URL in your browser: http://localhost:8080/mysql-java-ee-sample-1.0-SNAPSHOT/
    9.14. Click on "Upload" button and choose "mysql/scheme.xml" file, after that click on "Save scheme"
    9.15. Press Start Process
 
