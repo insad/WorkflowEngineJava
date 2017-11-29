@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Process Name="">
+  <Designer Scale="" X="" Y=""/>
+  <Commands>
+    <Command Name="StartToRoute"/>
+    <Command Name="Approve"/>
+    <Command Name="Reject"/>
+  </Commands>
+  <Activities>
+    <Activity IsAutoSchemeUpdate="True" IsFinal="False" IsForSetState="True" IsInitial="True" Name="Draft" State="Draft">
+      <Designer X="70" Y="140"/>
+    </Activity>
+    <Activity IsAutoSchemeUpdate="True" IsFinal="False" IsForSetState="True" IsInitial="False" Name="State1" State="State1">
+      <Designer X="350" Y="140"/>
+    </Activity>
+    <Activity IsAutoSchemeUpdate="True" IsFinal="False" IsForSetState="True" IsInitial="False" Name="State2" State="State2">
+      <Designer X="360" Y="300"/>
+    </Activity>
+    <Activity IsAutoSchemeUpdate="True" IsFinal="True" IsForSetState="True" IsInitial="False" Name="Final" State="Final">
+      <Designer X="660" Y="300"/>
+    </Activity>
+  </Activities>
+  <Transitions>
+    <Transition AllowConcatenationType="And" Classifier="Direct" ConditionsConcatenationType="And" DisableParentStateControl="False" From="Draft" IsFork="False" MergeViaSetState="False" Name="Activity_1_Activity_2_1" RestrictConcatenationType="And" To="State1">
+      <Triggers>
+        <Trigger NameRef="StartToRoute" Type="Command"/>
+      </Triggers>
+      <Conditions>
+        <Condition Type="Always"/>
+      </Conditions>
+      <Designer Bending="" X="304" Y="168"/>
+    </Transition>
+    <Transition AllowConcatenationType="And" Classifier="Direct" ConditionsConcatenationType="And" DisableParentStateControl="False" From="State1" IsFork="False" MergeViaSetState="False" Name="Activity_2_Activity_3_1" RestrictConcatenationType="And" To="State2">
+      <Triggers>
+        <Trigger NameRef="Approve" Type="Command"/>
+      </Triggers>
+      <Conditions>
+        <Condition Type="Always"/>
+      </Conditions>
+      <Designer Bending="" X="450" Y="250"/>
+    </Transition>
+    <Transition AllowConcatenationType="And" Classifier="Direct" ConditionsConcatenationType="And" DisableParentStateControl="False" From="State2" IsFork="False" MergeViaSetState="False" Name="Activity_3_Activity_4_1" RestrictConcatenationType="And" To="Final">
+      <Triggers>
+        <Trigger NameRef="Approve" Type="Command"/>
+      </Triggers>
+      <Conditions>
+        <Condition Type="Always"/>
+      </Conditions>
+      <Designer Bending="" X="603" Y="330"/>
+    </Transition>
+    <Transition AllowConcatenationType="And" Classifier="Reverse" ConditionsConcatenationType="And" DisableParentStateControl="False" From="State1" IsFork="False" MergeViaSetState="False" Name="Activity_2_Activity_1_1" RestrictConcatenationType="And" To="Draft">
+      <Triggers>
+        <Trigger NameRef="Reject" Type="Command"/>
+      </Triggers>
+      <Conditions>
+        <Condition Type="Always"/>
+      </Conditions>
+      <Designer Bending="" X="307" Y="247"/>
+    </Transition>
+    <Transition AllowConcatenationType="And" Classifier="Reverse" ConditionsConcatenationType="And" DisableParentStateControl="False" From="State2" IsFork="False" MergeViaSetState="False" Name="Activity_3_Activity_1_1" RestrictConcatenationType="And" To="Draft">
+      <Triggers>
+        <Trigger NameRef="Reject" Type="Command"/>
+      </Triggers>
+      <Conditions>
+        <Condition Type="Always"/>
+      </Conditions>
+      <Designer Bending="" X="170" Y="268"/>
+    </Transition>
+  </Transitions>
+</Process>

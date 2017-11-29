@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>optimajet.workflow.sample</groupId>
+    <artifactId>oracle-console-sample</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <name>Workflow Oracle Console example</name>
+
+    <organization>
+        <name>OptimaJet LLC</name>
+        <url>http://optimajet.com</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>Commercial license</name>
+            <url>https://workflowengine.io/agreements/eula/</url>
+        </license>
+    </licenses>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.7</java.version>
+        <workflow.version>2.0</workflow.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.workflowengine</groupId>
+            <artifactId>workflow-core</artifactId>
+            <version>${workflow.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.workflowengine</groupId>
+            <artifactId>workflow-oracle</artifactId>
+            <version>${workflow.version}</version>
+        </dependency>
+        <!-- // note драйвера от оракла не распространяются свободно, их нельзя выкладывать в public -->
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc7</artifactId>
+            <version>12.1.0.1.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.4.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>workflowapp.Program</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.5.0</version>
+                <configuration>
+                    <mainClass>workflowapp.Program</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
