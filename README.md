@@ -138,7 +138,7 @@ PATH=$PATH:$HOME/.local/bin:$HOME/bin:$JAVA_HOME/bin:$M2_HOME/bin
    9.6.  Configuration -> Datasources -> Non-XA -> Add<br/>
    9.7.  Choose Datasource -> MySQL Datasource -> Next<br/>
    9.8.  Step 1/3: Datasource Attributes: Name: MySqlDS, JNDI Name: java:jboss/datasources/MySqlDS -> Next<br/>
-   9.9.  Step 2/3: JDBC Driver: Âêëàäêà Detected Driver -> mysql-connector-java-5.1.40.jar_com.mysql.jdbc.Driver_5_1 -> Next<br/>
+   9.9.  Step 2/3: JDBC Driver: Detected Driver Tab -> mysql-connector-java-5.1.40.jar_com.mysql.jdbc.Driver_5_1 -> Next<br/>
    9.10. Step 3/3: Connection Settings: Connection URL: jdbc:mysql://localhost:3306/workflow, Username: root -> Next<br/>
    9.11. Summary: Finish<br/>
    9.12. Execute the command: cd mysql/mysql-java-ee-sample<br/>
